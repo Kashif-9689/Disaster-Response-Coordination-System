@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  color: #00f7ff;
+  text-shadow: 0px 0px 8px #00f7ff;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #00f7ff;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  background: rgba(0, 247, 255, 0.1);
+  border-color: #00f7ff;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.resource-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 247, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.resource-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 247, 255, 0.6);
+}
+
+.status-bar {
+  height: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.status-Available {
+  background: #4caf50;
+}
+.status-Deployed {
+  background: #2196f3;
+}
+.status-InTransit {
+  background: #ff9800;
+}
+.status-Completed {
+  background: #9e9e9e;
+}
+
+button,
+select {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+.assign-btn {
+  background: #00f7ff;
+}
+.assign-btn:hover {
+  background: #00c1d4;
+}
+
+.update-btn {
+  background: #4caf50;
+}
+.update-btn:hover {
+  background: #388e3c;
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #00f7ff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  animation: fadeIn 0.5s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

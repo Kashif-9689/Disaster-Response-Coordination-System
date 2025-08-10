@@ -1,0 +1,75 @@
+/* Reset & body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+header {
+  background: #141e30;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #0ff;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff;
+}
+
+header h1 span {
+  color: #66fcf1;
+}
+
+/* Controls */
+.controls {
+  padding: 1rem;
+  background: #1b2838;
+  border-bottom: 1px solid #0ff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+select {
+  padding: 6px 10px;
+  background: #0b0c10;
+  color: #0ff;
+  border: 1px solid #0ff;
+  border-radius: 4px;
+}
+
+/* Layout */
+.dashboard {
+  display: flex;
+  height: calc(100vh - 140px);
+}
+
+#map {
+  flex: 2;
+  min-height: 100%;
+}
+
+.report-details {
+  flex: 1;
+  background: #1f2833;
+  padding: 1rem;
+  overflow-y: auto;
+  color: #c5c6c7;
+}
+
+.report-details h2 {
+  color: #66fcf1;
+}
+
+.report-image {
+  width: 100%;
+  border-radius: 6px;
+  margin: 10px 0;
+}

@@ -1,0 +1,176 @@
+/* Background and layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('background_01.webp'); /* Put your background image in 'images/background.jpg' */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  background: black;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 1500px;
+  font-size: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: white;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  flex: 1;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #00ffff;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: #00ffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 2px solid #00ffff;
+  transition: all 1.5s ease;
+}
+
+.card:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+#chatbot-container {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 320px;
+max-height: 500px;
+background: rgba(0, 0, 0, 0.55);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+color: white;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+z-index: 100;
+cursor: grab;
+}
+
+#chatbot-container:active {
+cursor: grabbing;
+}
+
+.chatbot-header {
+background-color: rgba(0, 255, 255, 0.15);
+padding: 12px;
+font-weight: bold;
+text-align: center;
+border-bottom: 1px solid #00ffff;
+font-size: 1rem;
+}
+
+.chatbot-body {
+flex: 1;
+padding: 10px;
+overflow-y: auto;
+max-height: 250px;
+font-size: 0.95rem;
+}
+
+.chatbot-input-container {
+display: flex;
+padding: 10px;
+border-top: 1px solid #00ffff;
+background: rgba(255, 255, 255, 0.05);
+}
+
+.chatbot-input-container input {
+flex: 1;
+padding: 8px;
+border: none;
+border-radius: 8px;
+margin-right: 8px;
+font-size: 0.9rem;
+}
+
+.chatbot-input-container button {
+padding: 8px 14px;
+background-color: #00ffff;
+border: none;
+color: black;
+font-weight: bold;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.chatbot-input-container button:hover {
+background-color: #00dddd;
+}
+
+.suggestions {
+padding: 10px;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+background: rgba(0, 0, 0, 0.3);
+}
+
+.suggestions button {
+background-color: rgba(0, 255, 255, 0.1);
+border: 1px solid #00ffff;
+color: #00ffff;
+border-radius: 8px;
+padding: 5px 10px;
+font-size: 0.8rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.suggestions button:hover {
+background-color: rgba(0, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 1px solid #00ffff;
+  color: #ccc;
+}

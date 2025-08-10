@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>Disaster Report</title> 
+    <link rel="stylesheet" href="style.css" /> 
+  </head> 
+  <body> 
+    <div class="container"> 
+      <h2>📝 Disaster Report</h2>
+      <label for="description">Description:</label>
+      <textarea id="description" rows="5" placeholder="Describe the incident..."></textarea>
+
+      <label for="imageUpload">Upload Image:</label>
+      <input type="file" id="imageUpload" />
+
+      <div class="location-display">📍 Detected Location: <span id="location">Detecting...</span></div>
+
+      <button onclick="submitReport()">Submit Report</button>
+    </div> 
+    <script type="module" src="script.js"></script> 
+  </body> 
+</html>

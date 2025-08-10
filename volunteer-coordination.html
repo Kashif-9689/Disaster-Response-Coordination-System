@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Volunteer Coordination Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="volunteer-panel.css" />
+  <link rel="stylesheet" href="toast.css" />
+</head>
+<body>
+  <header>
+    <h1>🤝 Volunteer Coordination Panel</h1>
+    <button id="themeToggle">🌙  Switch Modes</button>
+  </header>
+
+  <div class="filters">
+    <input type="text" id="searchArea" placeholder="Search by Area..." />
+    <select id="statusFilter">
+      <option value="">All Statuses</option>
+      <option value="Available">Available</option>
+      <option value="Busy">Busy</option>
+      <option value="Unavailable">Unavailable</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table id="volunteerTable">
+      <thead>
+        <tr>
+          <th data-sort="name">Name</th>
+          <th data-sort="area">Area</th>
+          <th data-sort="contact">Contact</th>
+          <th data-sort="status">Status</th>
+          <th data-sort="timestamp">Registered At</th>
+        </tr>
+      </thead>
+      <tbody id="volunteerTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Firebase config -->
+  <script src="firebase.js"></script>
+
+  <!-- App logic -->
+  <script src="volunteer-panel.js"></script>
+  <script src="toast.js"></script>
+</body>
+</html>

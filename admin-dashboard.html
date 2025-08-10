@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin-dashboard.css" />
+  <link rel="stylesheet" href="toast.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js" defer></script>
+  <script src="admin-dashboard.js" defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzuBfEQeQ0-M3iYATsix4-JA8jjXjE5oA&callback=initMap"
+    async defer></script>
+</head>
+<body>
+  <header>
+    <h1>⚡ <span>Disaster Response</span> Admin Dashboard</h1>
+  </header>
+  <main>
+    <section class="controls">
+      <label for="statusFilter">Filter by Status:</label>
+      <select id="statusFilter">
+        <option value="All">All</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+    </section>
+    <section class="dashboard">
+      <div id="map"></div>
+      <aside class="report-details" id="reportDetails">
+        <p>Select a marker to view report details.</p>
+      </aside>
+    </section>
+  </main>
+<script src="toast.js"></script>
+</body>
+</html>

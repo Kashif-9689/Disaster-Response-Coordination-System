@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🚛 Resource Allocation Panel</title>
+  <link rel="stylesheet" href="resource-allocation.css" />
+</head>
+<body>
+  <header>
+    <h1>🚨 Resource Allocation Panel</h1>
+  </header>
+
+  <div class="filters">
+    <input type="text" id="searchResource" placeholder="🔍 Search Resource..." />
+    <select id="statusFilter">
+      <option value="">All Statuses</option>
+      <option value="Available">Available</option>
+      <option value="Deployed">Deployed</option>
+      <option value="In Transit">In Transit</option>
+      <option value="Completed">Completed</option>
+    </select>
+
+    <!-- Mode Selector -->
+    <select id="modeSelector">
+      <option value="Trust-Based">Trust-Based</option>
+      <option value="Urgency-Based">Urgency-Based</option>
+    </select>
+  </div>
+
+  <h2>📑 Prioritized Incidents</h2>
+  <div id="incidentContainer" class="card-grid"></div>
+
+  <h2>🚛 Resources</h2>
+  <div id="resourceContainer" class="card-grid"></div>
+
+  <div id="toast-container"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Firebase Config -->
+  <script src="firebase.js"></script>
+
+  <!-- Main Script -->
+  <script src="resource-allocation.js"></script>
+</body>
+</html>

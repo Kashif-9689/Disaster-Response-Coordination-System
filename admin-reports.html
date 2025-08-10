@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disaster Reports Dashboard</title>
+  <link rel="stylesheet" href="admin-reports.css" />
+  <link rel="stylesheet" href="toast.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js" defer></script>
+  <script src="admin-reports.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Disaster Reports Dashboard</h1>
+  </header>
+
+  <div class="controls">
+    <label for="statusFilter">Filter by Status:</label>
+    <select id="statusFilter">
+      <option value="All">All</option>
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Resolved">Resolved</option>
+    </select>
+  </div>
+
+  <div id="reportsContainer" class="reports-grid">
+    <p>Loading reports...</p>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="toast.js"></script>
+</body>
+</html>

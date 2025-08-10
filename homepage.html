@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disaster Response System</title>
+  <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="chatbot.css" />    
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌐 Disaster Response System</h1>
+      <p class="subheading">A unified platform for rapid reporting, volunteer coordination, and efficient disaster response.</p>
+    </header>
+
+    <main>
+      <div class="card-grid">
+        <a href="index.html" class="card">📝 Report a Disaster</a>
+        <a href="admin-dashboard.html" class="card">🛠️ Admin Dashboard</a>
+        <a href="volunteer.html" class="card">🤝 Volunteer/NGO Registration</a>
+        <a href="volunteer-coordination.html" class="card">📊 Volunteer Coordination Panel</a>
+        <a href="admin-reports.html" class="card">📊 Disaster Reports Dashboard</a>
+      </div>
+
+      <div class="description">
+        <p><strong>Disaster Response System</strong> is an AI-assisted platform designed to overcome the critical delays and inefficiencies found in conventional disaster management systems. Despite advancements in technology, current solutions often operate in isolation, lack coordination among stakeholders (citizens, NGOs, and government bodies), and are heavily reliant on manual processes.</p>
+
+        <ul>
+          <li>Real-time disaster reporting from citizens via a web interface</li>
+          <li>AI-powered damage assessment using uploaded images</li>
+          <li>Intelligent volunteer-NGO matching for rapid deployment</li>
+          <li>Dynamic rescue scheduling based on urgency and proximity</li>
+          <li>Predictive modeling using historical data and simulated sensors</li>
+        </ul>
+
+        <p>Informed by over 20 research papers, our solution integrates semi-supervised learning, social media mining, and trust-based verification to enhance reliability and speed.</p>
+
+        <p><strong>Research Focus:</strong><br>
+        To what extent does trust-weighted prioritization improve critical response times and reduce false dispatch rates compared to baseline FIFO (First-In-First-Out) and proximity-based methods?</p>
+
+        <p>This question guides our unique implementation of a trust-scoring engine that weighs volunteer credibility and contextual urgency before allocating rescue resources — aiming for smarter, faster, and more accountable responses.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ✅ Chatbot Component -->
+  <div id="chatbot-container">
+    <div class="chatbot-header">🤖 Disaster Assistant</div>
+    <div id="chatbox" class="chatbot-body"></div>
+    <div id="suggestions" class="suggestions"></div>
+    <div class="chatbot-input-container">
+      <input type="text" id="user-input" placeholder="Ask something..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>&copy; 2025 Disaster Response System. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ Chatbot Script -->
+  <script src="chatbot.js"></script>
+  <script> 
+  const chatbot = document.getElementById('chatbot-container'); 
+  let isDragging = false, offsetX, offsetY; 
+  chatbot.addEventListener('mousedown', function(e) { 
+    isDragging = true; 
+    offsetX = e.clientX - chatbot.offsetLeft; 
+    offsetY = e.clientY - chatbot.offsetTop; 
+  }); 
+  document.addEventListener('mousemove', function(e) { 
+    if (isDragging) { 
+      chatbot.style.left = (e.clientX - offsetX) + 'px'; 
+      chatbot.style.top = (e.clientY - offsetY) + 'px'; 
+      } 
+  }); 
+  document.addEventListener('mouseup', function() { 
+    isDragging = false; 
+  }); 
+  </script>
+</body>
+</html>

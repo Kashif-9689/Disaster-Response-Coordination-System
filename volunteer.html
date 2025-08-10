@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer / NGO Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('background_02.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.7);
+      font-size: 28px;
+      font-weight: bold;
+      border-bottom: 2px solid #0ff;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: rgba(0,0,0,0.8);
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0ff;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #222;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0ff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0cc;
+    }
+
+    footer {
+      background: rgba(0,0,0,0.8);
+      color: #aaa;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      border-top: 1px solid #0ff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🛡️ Volunteer / NGO Registration
+  </header>
+
+  <main>
+    <div class="form-container">
+      <input type="text" id="name" placeholder="NGO/Team Name" />
+      <input type="text" id="area" placeholder="Area" />
+      <input type="text" id="contact" placeholder="Contact" />
+      <select id="status">
+        <option>Available</option>
+        <option>Busy</option>
+        <option>Unavailable</option>
+      </select>
+      <button onclick="registerVolunteer()">Register</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Disaster Response System. All rights reserved.
+  </footer>
+
+  <!-- ✅ Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- ✅ Firebase Config -->
+  <script src="firebase.js"></script>
+
+  <!-- ✅ Form Submission Logic -->
+  <script>
+    function registerVolunteer() {
+      const name = document.getElementById("name").value;
+      const area = document.getElementById("area").value;
+      const contact = document.getElementById("contact").value;
+      const status = document.getElementById("status").value;
+
+      if (!name || !area || !contact) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      db.collection("volunteers").add({
+        name,
+        area,
+        contact,
+        status,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        alert("Registered successfully!");
+        document.getElementById("name").value = "";
+        document.getElementById("area").value = "";
+        document.getElementById("contact").value = "";
+        document.getElementById("status").value = "Available";
+      }).catch((error) => {
+        console.error("Error registering volunteer:", error);
+      });
+    }
+  </script>
+</body>
+</html>
